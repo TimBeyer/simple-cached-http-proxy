@@ -1,0 +1,22 @@
+{
+  "name": "simple-cached-http-proxy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "simple-cached-proxy": "bin/simple-cached-proxy"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bluebird": "^2.9.34",
+    "body-parser": "^1.13.2",
+    "express": "^4.13.1",
+    "lodash": "^3.10.0",
+    "request": "^2.60.0",
+    "yargs": "^3.16.1"
+  }
+}

@@ -1,0 +1,28 @@
+#!/usr/bin/env node
+var fs = require('fs');
+var _ = require('lodash');
+var argv = require('yargs')
+            .usage('Proxy API requests and cache them.\nUsage: $0 -u <url> -p <port>')
+            .example('$0 -u https://api.deliveryhero.com.au -p 8081', 'create proxy for https://api.deliveryhero.com.au and run on port 8081')
+            .options('u', {
+                alias: 'url',
+                description: 'The url to be proxied to',
+                required: true
+            })
+            .options('p', {
+                alias: 'port',
+                description: 'The port under which to work',
+                required: true,
+                default: 8081
+            })
+            .argv;
+
+var configOptions = _.pick(argv, 'port', 'url');
+var config = {
+    url: configOptions.url,
+    port: configOptions.port
+};
+
+var startProxy = require('../index.js');
+startProxy(config);
+
